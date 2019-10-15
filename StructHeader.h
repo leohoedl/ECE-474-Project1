@@ -2,7 +2,7 @@
 #define structures
 
 struct RAT {
-	bool reg; /*If rs_reg is equal to 1, then it is pointing to RS*/
+	bool reg; 
 	int regTarget;
 };
 
@@ -22,9 +22,9 @@ struct RegisterFile {
 
 struct InstQueue {
 	int opcode;
-	int dstOp;
-	int src1Op;
-	int src2Op;
+	int dstReg;
+	int src1Reg;
+	int src2Reg;
 };
 
 struct Unit {
