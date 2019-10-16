@@ -11,49 +11,53 @@ Leo Hoedl, Matthew McLaughlin
 #include <stddef.h>
 using namespace std;
 
+//Functions
+int getRS(ReservationStation rs[]);
+
+
+
+
+
 int main() {
 
 	int headQueue = 0;
 	int tailQueue = 0;
 
-	int addSubRSHead = 0;
-	int addSubRSTail = 0;
-	int multDivRSHead = 3;
-	int multDivRSTail = 3;
-
 	int maxInst;
 	int input;
 	int inputCount = 0;
 	int maxCycles;
-	int cycleCount = 0;
-	int AddUnit[5];
-	int MulUnit[5];
-	int AddSubCC = 2;
-	int MulCC = 10;
-	int DivCC = 40;
+	int cycleCount = 1;
+	const int AddSubCC = 2;
+	const int MulCC = 10;
+	const int DivCC = 40;
 
 	RegisterFile regFile[8];
-	ReservationStation RS[5];
-	InstQueue instQ[10];
+	ReservationStation ASRS[3];
+	ReservationStation MDRS[2];
+	Inst instQ[10];
 	RAT rat[8];
-	Unit addsub = { -1,0,0,0,0 };
-	Unit muldiv = { -1,0,0,0,0 };
+	Unit addsub = { -1,0,0,0,0,0 };
+	Unit muldiv = { -1,0,0,0,0,0 };
 
 	ifstream inFile;
 	string file;
 
 	/*Initialize instQueue*/
-	for (int i = 0;i < 10;i++) {
+	for (int i = 0; i < 10; i++) {
 		instQ[i] = { NULL, NULL, NULL, NULL };
 	}
 
 	/*Initialize RS*/
-	for (int i = 0;i < 5;i++) {
-		RS[i] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+	for (int i = 0; i < 3; i++) {
+		ASRS[i] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+	}
+	for (int i = 0; i < 2; i++) {
+		MDRS[i] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL };
 	}
 
 	/*Initialize RAT*/
-	for (int i = 0;i < 8;i++) {
+	for (int i = 0; i < 8; i++) {
 		rat[i].reg = 0;
 		rat[i].regTarget = i;
 	}
@@ -121,4 +125,30 @@ int main() {
 			inputCount++;
 		}
 	}
+	//Begin Algorithm
+	for (int cyclecount; cyclecount <= maxCycles; cyclecount++) {
+		//Dispatch
+
+		//Issue
+
+		//Broadcast
+
+
+
+	}
+}
+
+
+
+//Function definitions
+int getRS(ReservationStation rs[]) {
+	int size = sizeof(rs);
+	int available = -1;
+	for (int i = 0; i < size; i++) {
+		if (!rs[i].busy) {
+			available = i;
+			break;
+		}
+	}
+	return available;
 }
