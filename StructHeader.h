@@ -1,13 +1,13 @@
-#pragma	once
+#pragma once
 #define structures
 
 struct RAT {
-	bool reg;
+	bool reg; /*If rs_reg is equal to 1, then it is pointing to RS*/
 	int regTarget;
 };
 
 struct ReservationStation {
-	bool busy;
+	int busy;
 	int op;
 	int dest;
 	int V1;
@@ -20,7 +20,7 @@ struct RegisterFile {
 	int regValue;
 };
 
-struct Inst {
+struct InstQueue {
 	int opcode;
 	int dstReg;
 	int src1Reg;
@@ -33,5 +33,4 @@ struct Unit {
 	int regS;
 	int regT;
 	int rsDst;
-	int startCycle;
 };
