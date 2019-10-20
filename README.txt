@@ -20,6 +20,8 @@ Contents of "instr.txt"
 10
 7
 9
+
+
 Key for "instr.txt"
 		            I	D	B	
 I0: R1 = R2 - R3    1	2	4     
@@ -29,7 +31,8 @@ I3: R5 = R3 + R5	4	44	46  <-- Dependency on I1
 I4: R7 = R5 - R4	5	47	49  <-- Dependency on I3
 I5: R1 = R4 * R5	44	55	65  <-- Dependency on I3
 I6: R8 = R7 + R1	45	66	68  <-- Dependency on I4
-----------------------------------------------------
+
+
 Steps for setting up project:
 1) Start Visual Studio 2019
 2) Create a new empty C++ project
