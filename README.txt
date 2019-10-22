@@ -13,8 +13,8 @@ Contents of "instr.txt"
 2 1 7 5
 0 8 7 1
 0
-16
-5
+16  
+5  
 7
 21
 10
@@ -30,6 +30,16 @@ I3: R5 = R3 + R5	4	44	46  <-- Dependency on I1
 I4: R7 = R5 - R4	5	47	49  <-- Dependency on I3
 I5: R1 = R4 * R5	44	55	65  <-- Dependency on I3
 I6: R8 = R7 + R1	45	66	68  <-- Dependency on I4
+
+Final Reg File Contents
+R1: 11 
+R2: 16
+R3: 3
+R4: 7
+R5: 24
+R6: 176
+R7: 17
+R8: 9
 ----------------------------------------------------
 Steps for setting up project:
 1) Start Visual Studio 2019
