@@ -3,7 +3,14 @@
 
 struct RAT {
 	bool reg; /*If rs_reg is equal to 1, then it is pointing to RS*/
-	int regTarget;
+	int RSTarget;
+};
+
+struct Inst {
+	int opcode;
+	int dstReg;
+	int src1Reg;
+	int src2Reg;
 };
 
 struct ReservationStation {
@@ -14,23 +21,18 @@ struct ReservationStation {
 	int V2;
 	int T1;
 	int T2;
+	Inst ins;
 };
 
-struct RegisterFile {
+struct Register {
 	int regValue;
 };
 
-struct InstQueue {
-	int opcode;
-	int dstReg;
-	int src1Reg;
-	int src2Reg;
-};
+
 
 struct Unit {
-	int op;
-	int regDst;
-	int regS;
-	int regT;
-	int rsDst;
+	int endCycle;
+	bool busy;
+	Inst ins;
+	int RSsrc;
 };
