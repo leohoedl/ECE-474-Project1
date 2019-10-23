@@ -20,8 +20,8 @@ Contents of "instr.txt"
 
 
 Key for "instr.txt"
-		            I	D	B	
-I0: R2 = R4 + R6    1	2	4     result: R2 = 21 + 4 = 25
+		        I	D	B	
+I0: R2 = R4 + R6        1	2	4     result: R2 = 21 + 4 = 25
 I1: R4 = R3 * R5	2	3	13    result: R4 = 6 * 3 = 18
 I2: R5 = R2 * R4	3	14	16    result: R5 = 25 - 18 = 7    <-- Dependency on I0 & I1
 
