@@ -36,3 +36,10 @@ struct Unit {
 	Inst ins;
 	int RSsrc;
 };
+
+struct ROB {
+	int type;
+	int dest;
+	int value;
+	bool done;
+};
