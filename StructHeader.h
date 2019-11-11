@@ -42,4 +42,5 @@ struct ROB {
 	int dest;
 	int value;
 	bool done;
+	bool exception;
 };
